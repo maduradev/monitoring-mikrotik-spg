@@ -37,16 +37,16 @@ foreach ($mikrotik as $row) {
 
         foreach ($mikrotik as $row2) {
     ?>
-        setInterval(function () {
-                load_cctv2('<?php echo $row2->id; ?>'); //emnampilkan data secara realtime dengan waktu load 5 detik
-        }, 5000);
+            setInterval(function () {
+                    load_cctv2('<?php echo $row2->id; ?>'); //emnampilkan data secara realtime dengan waktu load 5 detik
+            }, 5000);
     <?php
         }
     ?>
 
     setTimeout(function(){
         window.location.href = '<?php echo base_url(); ?>';
-    }, 60000);
+    }, 300000);
 
     function load_cctv2(id) {
         $('#ip-'+id).load('<?php echo base_url(); ?>monitoring/load_cctv_status/'+id);
